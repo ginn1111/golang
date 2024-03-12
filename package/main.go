@@ -2,9 +2,9 @@ package main
 
 import (
   "fmt"
-  m "my-package/math"
+  "example/package/math1"
 )
 
 func main() {
-  fmt.Println(m.Average([]int{1,2,3})) // expect 2
+  fmt.Println(math.Average([]int{1,2,3})) // expect 2
 }
