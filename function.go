@@ -6,7 +6,7 @@ func ex2(input int) (int, bool) {
   return input/2, input % 2 == 0
 }
 
-func varadicFn(args... int) int {
+func varadicFn(args ...int) int {
   sum := 0
   for _, v := range args {
     sum += v
@@ -38,6 +38,22 @@ func deferFn() {
   first()
 }
 
+func panicAndRecover() {
+  defer func() {
+    str := recover()
+    fmt.Println(str)
+  }()
+  panic("PANIC")
+}
+
+func fib(x int) int {
+  if x <= 1 {
+    return x
+  }
+
+  return fib(x - 1) + fib(x - 2)
+}
+
 func main() {
   fmt.Println("Ex 1:")
   fmt.Println("func sum(arrs []float64) float64 {}")
@@ -60,5 +76,10 @@ func main() {
   fmt.Println("Ex 5:")
 
   deferFn()
+
+  panicAndRecover()
+
+  fmt.Println(fib(2))
+  fmt.Println(fib(5)) // 0 1 1 2 3 5
 
 }
