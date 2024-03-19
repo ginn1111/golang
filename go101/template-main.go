@@ -4,7 +4,11 @@ import (
 	"fmt"
 )
 
+func println(args ...interface{}) {
+	fmt.Println(args...)
+}
+
 func main() {
-	fmt.Println("Hello go")
+	println("Hello go!")
 
 }
